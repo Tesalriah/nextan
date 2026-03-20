@@ -10,7 +10,7 @@ export default function PostList() {
         fetch('https://dummyjson.com/posts')
             .then((res) => res.json())
             .then((res) => setPosts(res.posts))
-    })
+    }, [])
     return (
         <ul>
             {posts.map((post) => (
