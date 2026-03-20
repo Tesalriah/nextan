@@ -1,3 +1,9 @@
 export default function PostList() {
-    return <>게시글 목록</>
+    return (
+        <ul>
+            <li>게시글 목록</li>
+            <li>게시글 목록</li>
+            <li>게시글 목록</li>
+        </ul>
+    )
 }
