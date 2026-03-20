@@ -30,7 +30,7 @@ export default function RootLayout({
                     <Link href="/" className="p-3 hover:bg-gray-500">
                         홈
                     </Link>
-                    <Link href="posts" className="p-3 hover:bg-gray-500">
+                    <Link href="/posts" className="p-3 hover:bg-gray-500">
                         게시글 목록
                     </Link>
                 </nav>
