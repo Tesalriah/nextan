@@ -2,15 +2,27 @@
 
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
+import { supabase } from '../lib/supabase'
+
+interface Post {
+    id: number
+    title: string
+    content: string
+}
 
 export default function PostList() {
-    const [posts, setPosts] = useState([])
+    const [posts, setPosts] = useState<Post[]>([])
 
     useEffect(() => {
-        fetch('https://dummyjson.com/posts')
-            .then((res) => res.json())
-            .then((res) => setPosts(res.posts))
+        fetchData()
     }, [])
+
+    const fetchData = async () => {
+        const { data: posts, error } = await supabase.from('table').select('*').order('id', { ascending: true })
+        setPosts((posts as Post[]) ?? [])
+        console.log(posts)
+    }
+
     return (
         <ul>
             {posts.map((post) => (
