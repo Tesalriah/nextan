@@ -6,6 +6,7 @@ import { supabase } from '../lib/supabase'
 
 interface Post {
     id: number
+    created_at: Date
     title: string
     content: string
 }
